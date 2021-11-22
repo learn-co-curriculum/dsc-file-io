@@ -42,7 +42,7 @@ hex(id(x))
 
 
 
-    '0x104518700'
+    '0x10fedca40'
 
 
 
@@ -71,7 +71,7 @@ hex(id(x))
 
 
 
-    '0x104518700'
+    '0x10fedca40'
 
 
 
@@ -115,12 +115,12 @@ As we have seen previously, we can view a list of files in the current directory
 ! ls
 ```
 
-    README.md                  kernel_menu.png
-    cities.xlsx                leia.json
-    colors_and_numbers.parquet leia.xml
-    dog.jpg                    plot.pkl
-    food_prices.csv            zen_of_python.txt
-    index.ipynb
+    README.md                  [34mindex_files[m[m
+    cities.xls                 kernel_menu.png
+    colors_and_numbers.parquet leia.json
+    dog.jpg                    leia.xml
+    food_prices.csv            plot.pkl
+    index.ipynb                zen_of_python.txt
 
 
 Again this is a bit of a simplification, but you can think of this information as being stored on the **hard drive** of the computer (local or cloud), whereas objects in memory are stored in RAM.
@@ -160,12 +160,12 @@ Let's look at the files in the current directory again:
 ! ls
 ```
 
-    README.md                  kernel_menu.png
-    cities.xlsx                leia.json
-    colors_and_numbers.parquet leia.xml
-    dog.jpg                    plot.pkl
-    food_prices.csv            zen_of_python.txt
-    index.ipynb
+    README.md                  [34mindex_files[m[m
+    cities.xls                 kernel_menu.png
+    colors_and_numbers.parquet leia.json
+    dog.jpg                    leia.xml
+    food_prices.csv            plot.pkl
+    index.ipynb                zen_of_python.txt
 
 
 Say we want to open `zen_of_python.txt`. It is located in the same directory that this Python code is running from, so the relative file path is simply `zen_of_python.txt`.
@@ -474,12 +474,12 @@ Let's say we want to write this result to a new file called `zen_of_python_clean
 ! ls
 ```
 
-    README.md                  kernel_menu.png
-    cities.xlsx                leia.json
-    colors_and_numbers.parquet leia.xml
-    dog.jpg                    plot.pkl
-    food_prices.csv            zen_of_python.txt
-    index.ipynb
+    README.md                  [34mindex_files[m[m
+    cities.xls                 kernel_menu.png
+    colors_and_numbers.parquet leia.json
+    dog.jpg                    leia.xml
+    food_prices.csv            plot.pkl
+    index.ipynb                zen_of_python.txt
 
 
 If we want to store the result in a file, first we need to open it. To open a file **for writing** we need to specify an additional parameter, `mode`. We set this to `"w"`, for "write".
@@ -499,11 +499,12 @@ Now if we check, there is an empty file with the specified name:
 ```
 
     README.md                  kernel_menu.png
-    cities.xlsx                leia.json
+    cities.xls                 leia.json
     colors_and_numbers.parquet leia.xml
     dog.jpg                    plot.pkl
     food_prices.csv            zen_of_python.txt
     index.ipynb                zen_of_python_cleaned.txt
+    [34mindex_files[m[m
 
 
 Next, let's loop over our cleaned text and write it to the new file object using the `.write` method:
@@ -523,13 +524,14 @@ We can see this if we use the `-s` argument with the `ls` command, which shows t
 ! ls -s
 ```
 
-    total 328
-      8 README.md                   48 kernel_menu.png
-     16 cities.xlsx                  8 leia.json
+    total 384
+     72 README.md                   48 kernel_menu.png
+     16 cities.xls                   8 leia.json
       8 colors_and_numbers.parquet   8 leia.xml
      16 dog.jpg                    112 plot.pkl
       8 food_prices.csv              8 zen_of_python.txt
-     88 index.ipynb                  0 zen_of_python_cleaned.txt
+     80 index.ipynb                  0 zen_of_python_cleaned.txt
+      0 [34mindex_files[m[m
 
 
 In order to ensure that the data is actually written to the file on disk, we need to close the file object.
@@ -546,13 +548,14 @@ Now `zen_of_python_cleaned.txt` is no longer empty, and is approximately the sam
 ! ls -s
 ```
 
-    total 336
-      8 README.md                   48 kernel_menu.png
-     16 cities.xlsx                  8 leia.json
+    total 392
+     72 README.md                   48 kernel_menu.png
+     16 cities.xls                   8 leia.json
       8 colors_and_numbers.parquet   8 leia.xml
      16 dog.jpg                    112 plot.pkl
       8 food_prices.csv              8 zen_of_python.txt
-     88 index.ipynb                  8 zen_of_python_cleaned.txt
+     80 index.ipynb                  8 zen_of_python_cleaned.txt
+      0 [34mindex_files[m[m
 
 
 **If you are ever wondering why your data has not actually been saved to a file, double-check that the file has been closed, or that the buffer has been cleared in some other way.** It is a best practice to close files when you are finished with them whether the files are used for reading or writing, but writing is where failing to close a file can cause more significant problems.
@@ -567,7 +570,7 @@ We will go over the most important tools in more depth in future lessons, but he
 
 ### Tabular Data Files
 
-Tabular data means data that can be represented as a table of rows and columns. Some common ways that tabular data is stored include CSV (`.csv`) and Excel (`.xlsx`) files.
+Tabular data means data that can be represented as a table of rows and columns. Some common ways that tabular data is stored include CSV (`.csv`) and Excel (`.xls` or `.xlsx`) files.
 
 #### CSV
 
@@ -615,7 +618,7 @@ If we open an Excel spreadsheet file as though it were just a text file, it woul
 
 
 ```python
-with open("cities.xlsx", mode="rb") as f:
+with open("cities.xls", mode="rb") as f:
     print(f.read(500))
 ```
 
@@ -630,7 +633,7 @@ Again, there is a library called XLRD we can use to bring this into Python in a 
 ```python
 import xlrd
 
-book = xlrd.open_workbook("cities.xlsx")
+book = xlrd.open_workbook("cities.xls")
 sheet = book.sheet_by_name("Sheet1")
 columns = [sheet.cell_value(0, col) for col in range(sheet.ncols)]
 
@@ -774,8 +777,8 @@ for child in root:
         print(child.tag, "|", child.text)
 ```
 
-    Tree: <xml.etree.ElementTree.ElementTree object at 0x10cc20160>
-    Root: <Element 'person' at 0x10c3de970>
+    Tree: <xml.etree.ElementTree.ElementTree object at 0x10d3cf1f0>
+    Root: <Element 'person' at 0x10d395d30>
     Child nodes:
     name | Leia Organa
     height | 150
@@ -786,8 +789,8 @@ for child in root:
     birth_year | 19BBY
     gender | female
     homeworld | http://swapi.dev/api/planets/2/
-    films | [ <Element 'film' at 0x10cd1c790> ... ]
-    vehicles | [ <Element 'vehicle' at 0x10cd1c9a0> ... ]
+    films | [ <Element 'film' at 0x10d5de7c0> ... ]
+    vehicles | [ <Element 'vehicle' at 0x10d5de9d0> ... ]
     created | 2014-12-10T15:20:09.791000Z
     edited | 2014-12-20T21:17:50.315000Z
     url | http://swapi.dev/api/people/5/
@@ -815,7 +818,7 @@ table["color"]
 
 
 
-    <pyarrow.lib.ChunkedArray object at 0x115b7a0e0>
+    <pyarrow.lib.ChunkedArray object at 0x10d490b30>
     [
       [
         "green",
