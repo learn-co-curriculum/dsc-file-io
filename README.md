@@ -42,7 +42,7 @@ hex(id(x))
 
 
 
-    '0x10fedca40'
+    '0x7fe74007da80'
 
 
 
@@ -71,7 +71,7 @@ hex(id(x))
 
 
 
-    '0x10fedca40'
+    '0x7fe74007da80'
 
 
 
@@ -89,15 +89,10 @@ x
 ```
 
 
-    ---------------------------------------------------------------------------
 
-    NameError                                 Traceback (most recent call last)
 
-    <ipython-input-1-6fcf9dfbd479> in <module>
-    ----> 1 x
-    
+    [10, 6, 7]
 
-    NameError: name 'x' is not defined
 
 
 This demonstrates how data in memory stops being stored by the computer when the software using it stops.
@@ -115,12 +110,13 @@ As we have seen previously, we can view a list of files in the current directory
 ! ls
 ```
 
-    README.md                  [34mindex_files[m[m
-    cities.xls                 kernel_menu.png
-    colors_and_numbers.parquet leia.json
-    dog.jpg                    leia.xml
-    food_prices.csv            plot.pkl
-    index.ipynb                zen_of_python.txt
+    README.md                  kernel_menu.png
+    cities.xls                 leia.json
+    colors_and_numbers.parquet leia.xml
+    dog.jpg                    plot.pkl
+    food_prices.csv            zen_of_python.txt
+    index.ipynb                zen_of_python_cleaned.txt
+    [34mindex_files[m[m
 
 
 Again this is a bit of a simplification, but you can think of this information as being stored on the **hard drive** of the computer (local or cloud), whereas objects in memory are stored in RAM.
@@ -160,12 +156,13 @@ Let's look at the files in the current directory again:
 ! ls
 ```
 
-    README.md                  [34mindex_files[m[m
-    cities.xls                 kernel_menu.png
-    colors_and_numbers.parquet leia.json
-    dog.jpg                    leia.xml
-    food_prices.csv            plot.pkl
-    index.ipynb                zen_of_python.txt
+    README.md                  kernel_menu.png
+    cities.xls                 leia.json
+    colors_and_numbers.parquet leia.xml
+    dog.jpg                    plot.pkl
+    food_prices.csv            zen_of_python.txt
+    index.ipynb                zen_of_python_cleaned.txt
+    [34mindex_files[m[m
 
 
 Say we want to open `zen_of_python.txt`. It is located in the same directory that this Python code is running from, so the relative file path is simply `zen_of_python.txt`.
@@ -328,7 +325,7 @@ file_obj.readlines()
 
     ValueError                                Traceback (most recent call last)
 
-    <ipython-input-14-e88a1c0bd8e3> in <module>
+    <ipython-input-18-e88a1c0bd8e3> in <module>
     ----> 1 file_obj.readlines()
     
 
@@ -474,12 +471,13 @@ Let's say we want to write this result to a new file called `zen_of_python_clean
 ! ls
 ```
 
-    README.md                  [34mindex_files[m[m
-    cities.xls                 kernel_menu.png
-    colors_and_numbers.parquet leia.json
-    dog.jpg                    leia.xml
-    food_prices.csv            plot.pkl
-    index.ipynb                zen_of_python.txt
+    README.md                  kernel_menu.png
+    cities.xls                 leia.json
+    colors_and_numbers.parquet leia.xml
+    dog.jpg                    plot.pkl
+    food_prices.csv            zen_of_python.txt
+    index.ipynb                zen_of_python_cleaned.txt
+    [34mindex_files[m[m
 
 
 If we want to store the result in a file, first we need to open it. To open a file **for writing** we need to specify an additional parameter, `mode`. We set this to `"w"`, for "write".
@@ -524,9 +522,9 @@ We can see this if we use the `-s` argument with the `ls` command, which shows t
 ! ls -s
 ```
 
-    total 384
+    total 392
      72 README.md                   48 kernel_menu.png
-     16 cities.xls                   8 leia.json
+     24 cities.xls                   8 leia.json
       8 colors_and_numbers.parquet   8 leia.xml
      16 dog.jpg                    112 plot.pkl
       8 food_prices.csv              8 zen_of_python.txt
@@ -548,9 +546,9 @@ Now `zen_of_python_cleaned.txt` is no longer empty, and is approximately the sam
 ! ls -s
 ```
 
-    total 392
+    total 400
      72 README.md                   48 kernel_menu.png
-     16 cities.xls                   8 leia.json
+     24 cities.xls                   8 leia.json
       8 colors_and_numbers.parquet   8 leia.xml
      16 dog.jpg                    112 plot.pkl
       8 food_prices.csv              8 zen_of_python.txt
@@ -622,7 +620,7 @@ with open("cities.xls", mode="rb") as f:
     print(f.read(500))
 ```
 
-    b'PK\x03\x04\x14\x00\x08\x08\x08\x00zbkL\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x18\x00\x00\x00xl/drawings/drawing1.xml\x9d\xd0QN\xc30\x0c\x06\xe0\x13p\x87*\xefkZ\x04hT\xeb\xf6Rq\x028\x80I\xdc6Z\x9dTv\xc6\xba\xdb\x13\xd1\x15$x\x19}\xb4,\x7f\xfa\xfd\xef\x0e\x13\r\xd9\x07\xb2\xb8\xe0kU\xe6\x85\xca\xd0\x9b`\x9d\xefj\xf5\xf6\xfa\xb2\xd9\xaaL"x\x0bC\xf0X\xab\x0b\x8a:\xec\xefv\x93\xe5\xea,\rg\xe9\xdeK\x95\xc6Z\xf51\x8e\x95\xd6bz$\x90<\x8c\xe8\xd3\xb6\rL\x10\xd3\xc8\x9d\xb6\x0c\xe7$\xd3\xa0\xef\x8b\xe2I\xcb\xc8\x08Vz\xc4\xd8\xcc\x1bu\xf5`\x85F\xe0\xfcr\x7fS\x9a\xd0\xb6\xce`\x13\xcc\x89\xd0\xc7\x19a\x1c \xa6.\xa4w\xa3,\x9aY\x91\xc6\xf4\xc0\xf1\x1b\x98\xfe\x08\xe4\x0c\x07\tm\xccM\xa0k\x94\xc5HB\xf90\x0b8\xfd\x18\xe5\xbf\x91G\xfd\xac\xb7\xbf!\xba\xe9\x1d\x02>\x9e\xc6Mr\xc7T\xc8\xbb\x1b\\\xbc|}\xb60\xb6\xa3\x15\xb5X\x07\x1d\x03)\xbd\xff\x04PK\x07\x08\xb7K\\\x9e\xf0\x00\x00\x00{\x02\x00\x00PK\x03\x04\x14\x00\x08\x08\x08\x00zbkL\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x18\x00\x00\x00xl/worksheets/sheet1.xml\x8d\x97\xcbr\x9b0\x14@\xbf\xa0\xff\xc0\xb0\x0f\xa0\x17\x02\x8f\xedLm7\xd3\xee:\x9d>\xd6\x04\xcb1\x13@\x1e\xc0\x8f\xfe}e \x92\x90P\xc7\x9b8FG\xf7\x1e.\xd2\x15^>\xdf\xaa\xd2\xbb\xb0\xa6-x\xbd\xf2A\x10\xf9\x1e\xabs\xbe/\xea\xb7\x95\xff\xeb\xe7\xcbS\xe2{m\x97\xd5\xfb\xac\xe45[\xf9\x7fY\xeb?\xaf?-\xaf\xbcyo\x8f\x8cu\x9e\x08P\xb7+\xff\xd8u\xa7E\x18\xb6\xf9\x91UY\x1b\xf0\x13\xab\xc5\xc8\x817U\xd6\x89\xaf\xcd['
+    b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>\x00\x03\x00\xfe\xff\t\x00\x06\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\r\x00\x00\x00\x01\x00\x00\x00\x00\x10\x00\x00\x0f\x00\x00\x00\x01\x00\x00\x00\xff\xff\xff\xff\x00\x00\x00\x00\x10\x00\x00\x00\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff'
 
 
 That is even further from something that we can meaningfully parse! All of the `\x` encoding means that this is data is not text, it is binary data encoded as bytes.
@@ -777,8 +775,8 @@ for child in root:
         print(child.tag, "|", child.text)
 ```
 
-    Tree: <xml.etree.ElementTree.ElementTree object at 0x10d3cf1f0>
-    Root: <Element 'person' at 0x10d395d30>
+    Tree: <xml.etree.ElementTree.ElementTree object at 0x7fe76197fd00>
+    Root: <Element 'person' at 0x7fe70001c860>
     Child nodes:
     name | Leia Organa
     height | 150
@@ -789,8 +787,8 @@ for child in root:
     birth_year | 19BBY
     gender | female
     homeworld | http://swapi.dev/api/planets/2/
-    films | [ <Element 'film' at 0x10d5de7c0> ... ]
-    vehicles | [ <Element 'vehicle' at 0x10d5de9d0> ... ]
+    films | [ <Element 'film' at 0x7fe700026db0> ... ]
+    vehicles | [ <Element 'vehicle' at 0x7fe700028130> ... ]
     created | 2014-12-10T15:20:09.791000Z
     edited | 2014-12-20T21:17:50.315000Z
     url | http://swapi.dev/api/people/5/
@@ -818,7 +816,7 @@ table["color"]
 
 
 
-    <pyarrow.lib.ChunkedArray object at 0x10d490b30>
+    <pyarrow.lib.ChunkedArray object at 0x7fe761cfbf40>
     [
       [
         "green",
@@ -831,13 +829,28 @@ table["color"]
 
 #### Pickle
 
-Pickle allows you to serialize Python objects even if they are not simple data structures like lists and dictionaries. See documentation [here](https://docs.python.org/3/library/pickle.html). For example, you could load a saved Matplotlib figure, then customize its appearance:
+Pickle allows you to serialize Python objects even if they are not simple data structures like lists and dictionaries. See documentation [here](https://docs.python.org/3/library/pickle.html). For example, you could create a Matplotlib figure, save it to a pickle file, load the figure, then customize its appearance:
 
 
 ```python
 import pickle
 import matplotlib.pyplot as plt
+import numpy as np
 
+x = np.random.rand(15)
+y = np.random.rand(15)
+
+fig, axes = plt.subplots()
+axes.set_xlabel("X Label That Was Set Before Pickling")
+axes.scatter(x, y)
+
+pickle.dump(fig, open('plot.pkl', 'wb'))
+
+plt.close("all")
+```
+
+
+```python
 with open("plot.pkl", "rb") as f:
     fig = pickle.load(f)
     ax = fig.gca()
@@ -845,7 +858,9 @@ with open("plot.pkl", "rb") as f:
 ```
 
 
-![png](index_files/index_84_0.png)
+    
+![png](index_files/index_85_0.png)
+    
 
 
 #### IMPORTANT SECURITY NOTE
@@ -885,7 +900,9 @@ ax.plot(range(10, 130, 10), range(100, 16, -7), "k--");
 ```
 
 
-![png](index_files/index_89_0.png)
+    
+![png](index_files/index_90_0.png)
+    
 
 
 If you want to manipulate the image in some way, you could use an image-specific library like Pillow ([documentation here](https://pillow.readthedocs.io/en/stable/handbook/tutorial.html)):
@@ -899,7 +916,9 @@ display(image)
 ```
 
 
-![png](index_files/index_91_0.png)
+    
+![png](index_files/index_92_0.png)
+    
 
 
 
@@ -910,7 +929,9 @@ display(image_rotated)
 ```
 
 
-![png](index_files/index_92_0.png)
+    
+![png](index_files/index_93_0.png)
+    
 
 
 
@@ -921,7 +942,9 @@ display(image_bw)
 ```
 
 
-![png](index_files/index_93_0.png)
+    
+![png](index_files/index_94_0.png)
+    
 
 
 
@@ -932,7 +955,9 @@ display(image_cropped)
 ```
 
 
-![png](index_files/index_94_0.png)
+    
+![png](index_files/index_95_0.png)
+    
 
 
 There are also libraries with functionality specifically designed for feeding images into machine learning models, such as [Keras](https://keras.io/api/preprocessing/image/).
@@ -940,3 +965,8 @@ There are also libraries with functionality specifically designed for feeding im
 ## Summary
 
 As a data scientist, file input and output is a key way for your code to interact with various kinds of data and to save your work "on disk". In this lesson we walked through the underlying concepts needed to work with files in Python, and provided examples of opening numerous file types with various libraries.
+
+
+```python
+
+```
