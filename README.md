@@ -259,7 +259,9 @@ We can treat this like any other list of strings.
 
 ```python
 for line in file_contents:
-    print(line, end="") # end="" to avoid double-spacing since strings already end with \n
+    print(
+        line, end=""
+    )  # end="" to avoid double-spacing since strings already end with \n
 ```
 
     The Zen of Python, by Tim Peters
@@ -340,7 +342,7 @@ is_better_than_count = 0
 for line in file_contents:
     if "is better than" in line:
         is_better_than_count += 1
-        
+
 print("The phrase 'is better than' appears", is_better_than_count, "times")
 ```
 
@@ -427,6 +429,7 @@ Then this code will create a cleaned version:
 
 ```python
 import string
+
 file_contents_cleaned = []
 for line in file_contents:
     words = line.split()
@@ -809,6 +812,7 @@ Loading just the `color` column of that dataset from a parquet file would look l
 
 ```python
 import pyarrow.parquet as pq
+
 table = pq.read_table("colors_and_numbers.parquet", columns=["color"])
 table["color"]
 ```
@@ -844,7 +848,7 @@ fig, axes = plt.subplots()
 axes.set_xlabel("X Label That Was Set Before Pickling")
 axes.scatter(x, y)
 
-pickle.dump(fig, open('plot.pkl', 'wb'))
+pickle.dump(fig, open("plot.pkl", "wb"))
 
 plt.close("all")
 ```
