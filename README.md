@@ -632,6 +632,11 @@ Again, there is a library called XLRD we can use to bring this into Python in a 
 
 
 ```python
+! pip install xlrd
+```
+
+
+```python
 import xlrd
 
 book = xlrd.open_workbook("cities.xls")
@@ -863,7 +868,7 @@ with open("plot.pkl", "rb") as f:
 
 
     
-![png](index_files/index_85_0.png)
+![png](index_files/index_86_0.png)
     
 
 
@@ -905,7 +910,7 @@ ax.plot(range(10, 130, 10), range(100, 16, -7), "k--");
 
 
     
-![png](index_files/index_90_0.png)
+![png](index_files/index_91_0.png)
     
 
 
@@ -921,7 +926,7 @@ display(image)
 
 
     
-![png](index_files/index_92_0.png)
+![png](index_files/index_93_0.png)
     
 
 
@@ -934,7 +939,7 @@ display(image_rotated)
 
 
     
-![png](index_files/index_93_0.png)
+![png](index_files/index_94_0.png)
     
 
 
@@ -947,7 +952,7 @@ display(image_bw)
 
 
     
-![png](index_files/index_94_0.png)
+![png](index_files/index_95_0.png)
     
 
 
@@ -960,7 +965,7 @@ display(image_cropped)
 
 
     
-![png](index_files/index_95_0.png)
+![png](index_files/index_96_0.png)
     
 
 
