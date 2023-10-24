@@ -19,7 +19,7 @@ You're probably already quite familiar with the general idea of interacting with
 
 ### Data in Memory
 
-In the previous lessons, we have mainly emphasized working with Python variables *in memory*. When something is in memory, that means that it can be easily modified and that it no longer exists once the software using it (in this case, a Python kernel) stops running.
+When something is in memory, that means that it can be easily modified and that it no longer exists once the software using it (in this case, a Python kernel) stops running.
 
 For example, take this code snippet:
 
@@ -103,7 +103,7 @@ As you can see, variables in memory are flexible and convenient, but they are in
 
 In contrast to data in memory, files *on disk* are stored more permanently.
 
-As we have seen previously, we can view a list of files in the current directory using the bash command `ls`:
+We can view a list of files in the current directory using the bash command `ls`:
 
 
 ```python
